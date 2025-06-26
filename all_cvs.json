@@ -1,0 +1,15 @@
+[
+  {
+    "person": "Youssef Mansouri",
+    "skills": [
+      "java"
+    ]
+  },
+  {
+    "person": "Rue Tariq ben Ziyad",
+    "skills": [
+      "java",
+      "python"
+    ]
+  }
+]
