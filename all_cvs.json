@@ -1,15 +1,92 @@
 [
   {
-    "person": "Youssef Mansouri",
+    "person": "Non spécifié",
     "skills": [
-      "java"
-    ]
+      "python",
+      "java",
+      "sql",
+      "ml"
+    ],
+    "skills_score": {
+      "python": 0.5,
+      "java": 0.5,
+      "sql": 0.5,
+      "ml": 0.5
+    }
   },
   {
-    "person": "Rue Tariq ben Ziyad",
+    "person": "Non spécifié",
+    "skills": [],
+    "skills_score": {}
+  },
+  {
+    "person": "Non spécifié",
     "skills": [
+      "python",
       "java",
-      "python"
-    ]
+      "sql",
+      "ml"
+    ],
+    "skills_score": {
+      "python": 0.5,
+      "java": 0.5,
+      "sql": 0.5,
+      "ml": 0.5
+    }
+  },
+  {
+    "person": "Non spécifié",
+    "skills": [
+      "python",
+      "java",
+      "sql",
+      "machine learning",
+      "deep learning",
+      "communication",
+      "natural language processing"
+    ],
+    "skills_score": {
+      "python": 0.5,
+      "java": 0.5,
+      "sql": 0.5,
+      "machine learning": 0.5,
+      "deep learning": 0.5,
+      "communication": 0.5,
+      "natural language processing": 0.5
+    }
+  },
+  {
+    "person": "Non spécifié",
+    "skills": [],
+    "skills_score": {}
+  },
+  {
+    "person": "Non spécifié",
+    "skills": [
+      "python",
+      "machine learning",
+      "java",
+      "sql",
+      "deep learning",
+      "natural language processing",
+      "nlp",
+      "ml",
+      "dl",
+      "teamwork",
+      "communication"
+    ],
+    "skills_score": {
+      "python": 0.5,
+      "machine learning": 0.5,
+      "java": 0.5,
+      "sql": 0.5,
+      "deep learning": 0.5,
+      "natural language processing": 0.5,
+      "nlp": 0.5,
+      "ml": 0.5,
+      "dl": 0.5,
+      "teamwork": 0.5,
+      "communication": 0.5
+    }
   }
 ]
