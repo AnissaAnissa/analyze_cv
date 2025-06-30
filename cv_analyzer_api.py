@@ -29,10 +29,20 @@ raw_skills = [
 
 def clean_text(text):
     text = text.lower()
-    text = ''.join(c if c not in string.punctuation else ' ' for c in text)
-    return ' '.join(text.split())
+    new_text = ""
+    for char in text:
+        if char not in string.punctuation:
+            new_text += char     
+        else:
+            new_text += " "    
+    words = new_text.split()       
+    cleaned = " ".join(words)   
+    return cleaned
 
-skills_list = [clean_text(skill) for skill in raw_skills]
+skills_list = []
+for skill in raw_skills:
+    cleaned_skill = clean_text(skill)  
+    skills_list.append(cleaned_skill)
 
 @app.post("/analyze-cv")
 def analyze_cv(data: CVFile):
@@ -53,12 +63,23 @@ def analyze_cv(data: CVFile):
 
         person = ""
         for ent in doc.ents:
-            if ent.label_ == "PERSON" and 1 < len(ent.text.split()) < 4:
+            if ent.label_ == "PERSON" :
                 person = ent.text
                 break
 
-        lines = [line.strip() for line in text.splitlines() if line.strip()]
-        spacy_sents = [sent.text.strip() for sent in doc.sents if sent.text.strip()]
+        
+        lines = []
+        for line in text.splitlines():
+            stripped_line = line.strip() 
+            if stripped_line: 
+                lines.append(stripped_line) 
+
+        spacy_sents = [] 
+        for sent in doc.sents: 
+            stripped_sent = sent.text.strip() 
+            if stripped_sent: 
+                spacy_sents.append(stripped_sent) 
+
         sentences = []
         for s in lines + spacy_sents:
             if s not in sentences:
@@ -66,8 +87,8 @@ def analyze_cv(data: CVFile):
 
         skill_scores, matched_sentences = analyze_skills_with_similarity(sentences, skills_list)
 
-        for match in matched_sentences:
-            print(f"{match['skill']}: {match['sentence']} --> confidence={match['confidence']}")
+        '''for match in matched_sentences:
+            print(f"{match['skill']}: {match['sentence']} --> confidence={match['confidence']}")'''
 
         result = {
             "person": person or "Non spécifié",
